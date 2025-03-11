@@ -1,0 +1,118 @@
+body {
+    background-color: #297b2b;
+}
+
+div {
+    /*border: 0.5px dashed lightgray;*/
+}
+
+img, p, div {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+#klondike_board {
+    display: flex;
+    flex-direction: column;
+}
+
+#klondike_board_top_row {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
+#klondike_board_bottom_row {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.klondike-columns-layout {
+    display: flex;
+    flex-direction: row;
+}
+
+#klondike_talon_row {
+    display: flex;
+    flex-direction: row;
+}
+
+#klondike_bases_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-depot-shade {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, .5);
+}
+
+.card-depot-spacer {
+    margin-right: 12px;
+}
+
+.card-depot-selector {
+    background: none;
+    z-index: 2;
+}
+
+.card-depot-selector[data-visible="true"]:hover {
+    background-color: rgba(0, 150, 255, 0.5);
+    box-shadow: 0 0 3px 5px rgba(0, 150, 255, 0.9);
+}
+
+.card-depot-selector[data-visible="true"]:active {
+    background-color: rgba(0, 150, 255, 1.0);
+}
+
+.klondike-one-column-group {
+    height: 140px;
+    width: 96px;
+    margin-right: 12px;
+}
+
+.klondike-column .card-shape {
+    margin-bottom: -116px;
+}
+
+.klondike-base .card-shape {
+    position: absolute;
+}
+
+#klondike_talon {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+#klondike_talon_counter {
+    position: absolute;
+    color: goldenrod;
+    text-align: center;
+    align-content: center;
+    font-size: larger;
+}
+
+#klondike_talon_counter:active {
+    transform: scale(1.05, 1.05)
+}
+
+#klondike_talon_counter[data-counter="0"] {
+    background: transparent;
+    border-color: transparent;
+}
+
+#klondike_talon .card-shape {
+    margin-right: -94px;
+}
+
+#klondike_waste {
+    display: flex;
+    flex-direction: row;
+}
+
+#klondike_waste .card-shape {
+    position: absolute;
+    /*margin-right: -94px;*/
+}

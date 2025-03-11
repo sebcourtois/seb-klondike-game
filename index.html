@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playing Cards</title>
+    <link href="cards.css" rel="stylesheet">
+    <link href="buttons.css" rel="stylesheet">
+    <link href="klondike.css" rel="stylesheet">
+    <script defer src="main.js"></script>
+    <script defer src="cards.js"></script>
+</head>
+<body>
+
+<div id="klondike_board">
+    <div id="klondike_board_top_row">
+        <div id="klondike_talon_row">
+            <div class="card-shape card-depot-shade card-depot-spacer">
+                <div id="klondike_talon" style="z-index: 1">
+                </div>
+                <div class="card-shape card-shadow card-back card-depot-spacer"
+                     id="klondike_talon_counter" data-counter="0" style="z-index: 2"></div>
+            </div>
+            <div class="card-shape card-depot-shade card-depot-spacer">
+                <div id="klondike_waste">
+                </div>
+            </div>
+        </div>
+        <div class="card-shape card-depot-spacer"></div>
+        <div id="klondike_bases_row">
+            <div class="card-shape card-depot-shade card-depot-spacer">
+            </div>
+            <div class="card-shape card-depot-shade card-depot-spacer">
+            </div>
+            <div class="card-shape card-depot-shade card-depot-spacer">
+            </div>
+            <div class="card-shape card-depot-shade card-depot-spacer">
+            </div>
+        </div>
+    </div>
+    <div id="klondike_board_bottom_row">
+        <div class="klondike-columns-layout" id="klondike_columns_group">
+        </div>
+    </div>
+</div>
+<button class="red-button-styled" id="start_game">Play</button>
+
+</body>
+</html>

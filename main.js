@@ -1,3 +1,5 @@
+import * as cards from "./cards.js"
+
 const SUITS_CONFIG = {
     "♥": {
         "sign": "assets/suit_hearts.svg",
@@ -122,7 +124,7 @@ function makeNumberedCardElement(rank, suit) {
     let suitColor = suit.color;
     let rankLabels = cardTemplate.content.querySelectorAll(".card-rank-text");
     for (let eachLabel of rankLabels) {
-        eachLabel.classList.add(suitColor === Color.Red ? "card-red-text" : "card-black-text");
+        eachLabel.classList.add(suitColor === cards.Color.Red ? "card-red-text" : "card-black-text");
     }
     return cardTemplate.content.firstElementChild;
 }
@@ -400,9 +402,9 @@ let klondike = null;
 function startGame() {
     btnShowAllCards.style.display = "none";
 
-    let deck = new Deck();
+    let deck = new cards.Deck();
     deck.shuffle();
-    klondike = new Klondike();
+    klondike = new cards.Klondike();
     klondike.deal(deck);
 
     let klondikeColumnsRow = document.querySelector("#klondike_columns_group");

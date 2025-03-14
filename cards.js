@@ -1,4 +1,4 @@
-class Color {
+export class Color {
     static Red = new Color("Red");
     static Black = new Color("Black");
 
@@ -11,7 +11,7 @@ class Color {
     }
 }
 
-class Suit {
+export class Suit {
     static Heart = new Suit("♥", Color.Red);
     static Club = new Suit("♣", Color.Black);
     static Diamond = new Suit("♦", Color.Red);
@@ -27,7 +27,7 @@ class Suit {
     }
 }
 
-class Rank {
+export class Rank {
     static Ace = new Rank(1, "A");
     static Two = new Rank(2, "2");
     static Three = new Rank(3, "3");
@@ -56,7 +56,7 @@ class Rank {
     }
 }
 
-class Card {
+export class Card {
     constructor(rank, suit, faceUp) {
         this.rank = rank;
         this.suit = suit;
@@ -183,7 +183,7 @@ function shuffle(someArray) {
     return someArray;
 }
 
-class Deck extends CardStack {
+export class Deck extends CardStack {
     constructor() {
         super();
         for (let eachSuit of Object.values(Suit)) {
@@ -199,7 +199,7 @@ class Deck extends CardStack {
 }
 
 
-class Klondike {
+export class Klondike {
     constructor() {
         this.talon = [];
         this.waste = [];

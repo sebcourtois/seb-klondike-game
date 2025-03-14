@@ -1,4 +1,5 @@
 import * as cards from "./cards.js"
+import {Klondike} from "./klondike.js";
 
 const SUITS_CONFIG = {
     "♥": {
@@ -404,7 +405,7 @@ function startGame() {
 
     let deck = new cards.Deck();
     deck.shuffle();
-    klondike = new cards.Klondike();
+    klondike = new Klondike();
     klondike.deal(deck);
 
     let klondikeColumnsRow = document.querySelector("#klondike_columns_group");

@@ -1,6 +1,6 @@
-import * as cards from "./cards.js";
+import {CardStack, CardRank} from "./card-types.js";
 
-class AlternateColorStack extends cards.CardStack {
+class AlternateColorStack extends CardStack {
 
     prepare(...someCards) {
         this.cards.push(...someCards);
@@ -16,7 +16,7 @@ class AlternateColorStack extends cards.CardStack {
 
     accepts(someCard) {
         if (this.isEmpty()) {
-            return (someCard.rank === cards.Rank.King);
+            return (someCard.rank === CardRank.King);
         }
         let lastCard = this.cards[this.cards.length - 1];
         return (
@@ -26,7 +26,7 @@ class AlternateColorStack extends cards.CardStack {
     }
 }
 
-class FamilyStack extends cards.CardStack {
+class FamilyStack extends CardStack {
 
     push(someCard) {
         if (!this.accepts(someCard)) {
@@ -36,7 +36,7 @@ class FamilyStack extends cards.CardStack {
     }
 
     accepts(someCard) {
-        if (this.isEmpty()) return (someCard.rank === cards.Rank.Ace);
+        if (this.isEmpty()) return (someCard.rank === CardRank.Ace);
 
         let lastCard = this.cards[this.cards.length - 1];
         return (
@@ -47,7 +47,7 @@ class FamilyStack extends cards.CardStack {
     }
 }
 
-export class Klondike {
+export class KlondikeModel {
     constructor() {
         this.talon = [];
         this.waste = [];

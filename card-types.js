@@ -1,6 +1,6 @@
-export class Color {
-    static Red = new Color("Red");
-    static Black = new Color("Black");
+export class CardColor {
+    static Red = new CardColor("Red");
+    static Black = new CardColor("Black");
 
     constructor(name) {
         this.name = name;
@@ -11,11 +11,11 @@ export class Color {
     }
 }
 
-export class Suit {
-    static Heart = new Suit("♥", Color.Red);
-    static Club = new Suit("♣", Color.Black);
-    static Diamond = new Suit("♦", Color.Red);
-    static Spade = new Suit("♠", Color.Black);
+export class CardSuit {
+    static Heart = new CardSuit("♥", CardColor.Red);
+    static Club = new CardSuit("♣", CardColor.Black);
+    static Diamond = new CardSuit("♦", CardColor.Red);
+    static Spade = new CardSuit("♠", CardColor.Black);
 
     constructor(text, color) {
         this.text = text;
@@ -27,20 +27,20 @@ export class Suit {
     }
 }
 
-export class Rank {
-    static Ace = new Rank(1, "A");
-    static Two = new Rank(2, "2");
-    static Three = new Rank(3, "3");
-    static Four = new Rank(4, "4");
-    static Five = new Rank(5, "5");
-    static Six = new Rank(6, "6");
-    static Seven = new Rank(7, "7");
-    static Eight = new Rank(8, "8");
-    static Nine = new Rank(9, "9");
-    static Ten = new Rank(10, "10");
-    static Joker = new Rank(11, "V");
-    static Queen = new Rank(12, "Q");
-    static King = new Rank(13, "K");
+export class CardRank {
+    static Ace = new CardRank(1, "A");
+    static Two = new CardRank(2, "2");
+    static Three = new CardRank(3, "3");
+    static Four = new CardRank(4, "4");
+    static Five = new CardRank(5, "5");
+    static Six = new CardRank(6, "6");
+    static Seven = new CardRank(7, "7");
+    static Eight = new CardRank(8, "8");
+    static Nine = new CardRank(9, "9");
+    static Ten = new CardRank(10, "10");
+    static Joker = new CardRank(11, "V");
+    static Queen = new CardRank(12, "Q");
+    static King = new CardRank(13, "K");
 
     constructor(value, text) {
         this.value = value;
@@ -135,11 +135,11 @@ function shuffle(someArray) {
     return someArray;
 }
 
-export class Deck extends CardStack {
+export class CardDeck extends CardStack {
     constructor() {
         super();
-        for (let eachSuit of Object.values(Suit)) {
-            for (let eachRank of Object.values(Rank)) {
+        for (let eachSuit of Object.values(CardSuit)) {
+            for (let eachRank of Object.values(CardRank)) {
                 this.cards.push(new Card(eachRank, eachSuit, false));
             }
         }

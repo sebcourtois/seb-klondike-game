@@ -1,5 +1,5 @@
-import * as cards from "./cards.js"
-import {Klondike} from "./klondike.js";
+import {CardColor, CardDeck} from "./card-types.js";
+import {KlondikeModel} from "./klondike-model.js";
 
 const SUITS_CONFIG = {
     "♥": {
@@ -125,7 +125,7 @@ function makeNumberedCardElement(rank, suit) {
     let suitColor = suit.color;
     let rankLabels = cardTemplate.content.querySelectorAll(".card-rank-text");
     for (let eachLabel of rankLabels) {
-        eachLabel.classList.add(suitColor === cards.Color.Red ? "card-red-text" : "card-black-text");
+        eachLabel.classList.add(suitColor === CardColor.Red ? "card-red-text" : "card-black-text");
     }
     return cardTemplate.content.firstElementChild;
 }
@@ -403,9 +403,9 @@ let klondike = null;
 function startGame() {
     btnShowAllCards.style.display = "none";
 
-    let deck = new cards.Deck();
+    let deck = new CardDeck();
     deck.shuffle();
-    klondike = new Klondike();
+    klondike = new KlondikeModel();
     klondike.deal(deck);
 
     let klondikeColumnsRow = document.querySelector("#klondike_columns_group");
